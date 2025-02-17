@@ -11,7 +11,7 @@ def insert_text():
 def extract_text():
     file_name = fd.askopenfilename(
         filetypes=(('TXT files', '*.txt'),
-                   ('HTML files', '*.html')
+                   ('HTML files', '*.html'),
                    ('ALL files', '*.*')))
     f = open(file_name, 'w')
     s = text.get(1.0, END)
