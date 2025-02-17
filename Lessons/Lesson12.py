@@ -10,6 +10,7 @@ def check():
         entry.delete(0, END)
         label['text'] = s
 
+
 root = Tk()
 entry = Entry()
 entry.pack(pady=10)

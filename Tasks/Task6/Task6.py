@@ -3,7 +3,6 @@ from tkinter import filedialog as fd
 from tkinter import messagebox as mb
 
 def insert_text():
-
     file_name = fd.askopenfilename()
     f = open(file_name)
     s = f.read()
@@ -27,6 +26,7 @@ def delete_text():
     )
     if answer:
         text.delete(1.0, END)
+
 
 root = Tk()
 
