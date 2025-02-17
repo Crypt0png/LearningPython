@@ -9,7 +9,7 @@ def insert_text():
     f.close()
 
 def extract_text():
-    file_name = fd.askopenfilename(
+    file_name = fd.asksaveasfilename(
         filetypes=(('TXT files', '*.txt'),
                    ('HTML files', '*.html'),
                    ('ALL files', '*.*')))
