@@ -1,15 +1,23 @@
 from tkinter import *
 
-root = Tk()
-root.geometry('250x200')
+# def login():
 
-Entry().grid(column=0, row=0) # Логин
-Entry().grid(column=1, row=0) # Пароль
-Button(text='Войти').grid(column=2, row=0) # Кнопка войти
-Button(text='Зарегистрироваться').grid(column=3, row=0) # Кнопка зарегистрироваться
+# def search():
+
+root = Tk()
+
+login = Frame()
+search = Frame()
+login.pack(anchor="ne")
+search.pack(anchor='center')
+
+Button(login, text='Регистрация').pack(side='right') # Кнопка регистрации
+Button(login, text='Войти').pack(side='right') # Кнопка войти
+Entry(login).pack(side='right') # Логин
+Entry(login).pack(side='right') # Пароль
 
 # Поле для поиска
-Entry().grid(column=0, row=1)
-Button(text='Ок').grid(column=1, row=1)
+Entry(search).pack()
+Button(search, text='Ок').pack()
 
 root.mainloop()
