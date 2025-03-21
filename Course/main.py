@@ -1,7 +1,6 @@
 from tkinter import *
-
+# Placeholders for future functions
 # def login():
-
 # def search():
 
 class Login(Tk):
@@ -9,8 +8,15 @@ class Login(Tk):
         super().__init__()
 
         self.title('Регистрация')
+
         self.entry()
-        self.button()
+        self.exit_but = Button(self, text='Вернуться')
+        self.exit_but['command'] = self.back_button
+        self.button.pack()
+
+        Login.grab_set()
+    def back_button(self):
+        self.destroy()
 
 
 root = Tk()
@@ -21,12 +27,13 @@ search = Frame()
 login.pack(anchor="ne")
 search.pack(anchor='center')
 
-Button(login, text='Регистрация').pack(side='right') # Кнопка регистрации
-Button(login, text='Войти').pack(side='right') # Кнопка войти
-Entry(login).pack(side='right') # Логин
-Entry(login).pack(side='right') # Пароль
+# Login/Registration block
+Button(login, text='Регистрация').pack(side='right')
+Button(login, text='Войти').pack(side='right')
+Entry(login).pack(side='right')
+Entry(login).pack(side='right')
 
-# Поле для поиска
+# Placeholder for search
 Entry(search).pack()
 Button(search, text='Ок').pack()
 
