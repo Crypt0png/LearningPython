@@ -4,7 +4,17 @@ from tkinter import *
 
 # def search():
 
+class Login(Tk):
+    def __init__(self):
+        super().__init__()
+
+        self.title('Регистрация')
+        self.entry()
+        self.button()
+
+
 root = Tk()
+root.title('Главное окно')
 
 login = Frame()
 search = Frame()
