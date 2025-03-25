@@ -3,38 +3,36 @@ from tkinter import *
 # def login():
 # def search():
 
-class Login(Tk):
-    def __init__(self):
-        super().__init__()
-
-        self.title('Регистрация')
-
-        self.entry()
-        self.exit_but = Button(self, text='Вернуться')
-        self.exit_but['command'] = self.back_button
-        self.button.pack()
-
-        Login.grab_set()
-    def back_button(self):
-        self.destroy()
+def reg_window():
+    def back_button():
+        reg.destroy()
+    reg = Toplevel()
+    reg.geometry('250x250')
+    reg.title('Регистрация')
+    Entry().pack()
+    Entry().pack()
+    Button().pack()
+    exit_but = Button(reg, text='Вернуться', command=back_button)
+    exit_but.pack()
 
 
 root = Tk()
 root.title('Главное окно')
-
-login = Frame()
-search = Frame()
-login.pack(anchor="ne")
-search.pack(anchor='center')
+root.geometry('250x250')
 
 # Login/Registration block
-Button(login, text='Регистрация').pack(side='right')
+login = Frame()
+search = Frame()
+login.pack(anchor='ne')
+search.pack(anchor='center')
+
+Button(login, text='Регистрация', command=reg_window).pack(side='right')
 Button(login, text='Войти').pack(side='right')
 Entry(login).pack(side='right')
 Entry(login).pack(side='right')
 
-# Placeholder for search
-Entry(search).pack()
+# Search block
+Entry(search).pack(pady=20)
 Button(search, text='Ок').pack()
 
 root.mainloop()
