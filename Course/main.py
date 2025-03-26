@@ -1,4 +1,5 @@
 from tkinter import *
+
 # Placeholders for future functions
 # def login():
 # def search():
@@ -6,25 +7,34 @@ from tkinter import *
 def reg_window():
     def back_button():
         reg.destroy()
+
     reg = Toplevel()
     reg.geometry('250x250')
     reg.title('Регистрация')
-    Entry().pack()
-    Entry().pack()
-    Button().pack()
-    exit_but = Button(reg, text='Вернуться', command=back_button)
-    exit_but.pack()
+
+    log = Frame(reg)
+    passw = Frame(reg)
+    log.pack()
+    passw.pack()
+    Label(log, text='Логин:').pack()
+    login = Entry(log)
+    login.pack()
+
+    Label(passw, text='Пароль:').pack()
+    password = Entry(passw)
+    password.pack()
+
+    Button(reg, text='Зарегистрироваться').pack()
+    Button(reg, text='Вернуться', command=back_button).pack()
 
 
 root = Tk()
 root.title('Главное окно')
-root.geometry('250x250')
+root.geometry('400x250')
 
 # Login/Registration block
 login = Frame()
-search = Frame()
 login.pack(anchor='ne')
-search.pack(anchor='center')
 
 Button(login, text='Регистрация', command=reg_window).pack(side='right')
 Button(login, text='Войти').pack(side='right')
@@ -32,7 +42,10 @@ Entry(login).pack(side='right')
 Entry(login).pack(side='right')
 
 # Search block
-Entry(search).pack(pady=20)
+search = Frame()
+search.pack(anchor='center', pady=60)
+
+Entry(search).pack()
 Button(search, text='Ок').pack()
 
 root.mainloop()
