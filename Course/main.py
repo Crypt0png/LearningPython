@@ -26,6 +26,7 @@ def reg_window():
 
     Button(reg, text='Зарегистрироваться').pack()
     Button(reg, text='Вернуться', command=back_button).pack()
+    reg.grab_set()
 
 
 root = Tk()
@@ -41,10 +42,12 @@ Button(login, text='Войти').pack(side='right')
 Entry(login).pack(side='right')
 Entry(login).pack(side='right')
 
+
 # Search block
 search = Frame()
 search.pack(anchor='center', pady=60)
 
+Label(search, text='Поиск:').pack()
 Entry(search).pack()
 Button(search, text='Ок').pack()
 
